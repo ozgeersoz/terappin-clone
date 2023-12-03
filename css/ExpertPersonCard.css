@@ -1,0 +1,45 @@
+.card{
+    width: 20rem;
+    height: 35rem;
+    border: 1px solid #E8E9FD;
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    padding: 1em;
+}
+
+.card-img-top{
+    overflow: hidden;/*içerisine konulan elementlerin taşan kısımlarını gizler, resimler taşsa da sığdığı kadarını görüntüler*/
+    width: 7rem;
+    height: 7rem;
+    border-radius: 50%;
+    border: 2px solid #52B69A;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    object-fit: contain;
+}
+
+.isOnline-icon{
+    width: 4.5rem;
+    height: 1.5rem;
+    border-radius: 20px;
+    border: 1px solid #52B69A;
+    background-color: #EEF8F5;
+    color: #52B69A;
+    font-weight: 600;
+    text-align: center;
+    margin-top: -0.3rem;
+}
+
+.start-btn{
+    width: 16rem;
+    height: 2rem;
+    border-radius: 20px;
+    background-color: #34A0A4;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+

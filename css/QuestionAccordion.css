@@ -1,0 +1,42 @@
+.accordion-header{
+    color: #040345;
+    font-weight: 600;
+    font-size: 1.2em;
+}
+
+.accordion-icon-background{
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    background-color: white;
+    display: flex;/* bir elemanın ortalanabilmesi için arka planının hizalaması ayarlanmalıdır*/
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.accordion-icon-background:hover{
+    background-color: #45EAAA;
+}
+
+.accordion-icon-background:hover .accordion-icon{
+    border-bottom: 0.8rem solid white; 
+}
+
+.accordion-header:hover .accordion-icon-background{
+    background-color: #45EAAA;
+}
+
+.accordion-header:hover .accordion-icon{
+    border-bottom: 0.8rem solid white; 
+}
+
+.accordion-icon{
+    width: 0;
+	height: 0;
+	border-left: 0.4rem solid transparent;
+	border-right: 0.4rem solid transparent;
+	border-bottom: 0.8rem solid #45EAAA;
+    transform: rotate(180deg);
+}
+

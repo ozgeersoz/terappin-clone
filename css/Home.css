@@ -1,0 +1,87 @@
+:root{
+    --purple-dark:#25165E;
+    --purple-primary: #322460;
+    --purple-secondary: #5636BE;
+    --purple-third:#ABAAF3;
+    --gray-primary: #EEF1F6;
+}
+
+#online-therapy{
+    padding: 3em;
+    background-color: var(--purple-third);
+}
+
+#therapy-text{
+    font-size: 2.8em;
+    font-weight: 620;
+    color: var(--purple-primary);
+}
+
+#advice-text{
+    font-size: 1.2em;
+    font-weight: 650;
+    color: var(--purple-primary);
+}
+
+#start-btn{
+    width: 15rem;
+    height: 4rem;
+    color: white;
+    background-color: var(--purple-primary);
+    font-weight: 600;
+    font-size: 1.5em;
+    border-radius: 20px 20px 20px 20px;
+    
+}
+
+#start-therapy-container{
+    margin-top: 5rem;
+}
+
+#guide-therapy{
+    background: radial-gradient(139.4% 68.79% at 56.09% 13.57%,hsla(0,0%,100%,.5) 0,hsla(0,0%,100%,0) 100%),radial-gradient(139.4% 68.79% at 56.09% 13.57%,#fff 0,hsla(0,0%,100%,0) 100%),radial-gradient(131.87% 60.9% at 116.93% 15.46%,#bbe4ff 0,hsla(0,0%,100%,0) 100%),radial-gradient(157.2% 72.6% at 189.2% 81.22%,rgba(109,66,239,.6) 0,hsla(0,0%,100%,0) 100%),linear-gradient(146.02deg,#ebdfff -1.05%,#fff 51.8%);
+    padding: 2rem;
+}
+
+.usage-btn{
+    display: flex;
+    justify-content: space-evenly;
+    padding: 1.5rem 1rem;
+    border-radius: 30px 30px 30px 30px;
+    cursor: pointer;
+}
+
+.match-container{
+    background-color: var(--gray-primary);
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.guide-therapy-image-container{
+    margin-top: 3rem;
+}
+
+#howToContainer{
+    margin-left: 14rem;
+}
+
+#abilities{
+    background-color: #4344E5;
+    padding: 3rem;
+}
+
+#benefits{
+    padding: 3rem;
+}
+
+#frequently-asked-questions{
+    background-color: #EDF8F4;
+}
+
+#experts{
+    background-color: rgb(249,249,249);
+}
