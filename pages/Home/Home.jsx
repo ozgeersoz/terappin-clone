@@ -6,16 +6,20 @@ import fakeQuestions from "../../dummy-data/questions";
 import ExpertsCarousel from "../../components/Carousels/ExpertsCarousel";
 
 const Home = () => {
+  const terapizoneLogos = "/terapizone-logos";
+  const terapizoneImages = "/terapizone-images";
   var previousClickedBtn = null;
 
   const selectUsageBtn = (targetClass, targetId, iconBackgroundId) => {
-    var iconBackground = document.getElementById(iconBackgroundId);
-    console.log("Id" + iconBackgroundId);
-    var icon = iconBackground.childNodes[0];
-    console.log("Icon background:" + iconBackground);
-    console.log(icon);
+    if ( targetClass === "usage-btn" &&
+      (targetId === "match" || targetId === "calendar" || targetId === "video")
+    ) {
+      var iconBackground = document.getElementById(iconBackgroundId);
+      console.log("Id" + iconBackgroundId);
+      var icon = iconBackground.childNodes[0];
+      console.log("Icon background:" + iconBackground);
+      console.log(icon);
 
-    if (targetClass === "usage-btn") {
       var selectedUsageBtn = document.getElementById(targetId);
 
       // tıklanma durumunu active sınıfı kontrol eder
@@ -48,11 +52,11 @@ const Home = () => {
   const getSelectedIcon = (id) => {
     switch (id) {
       case "match":
-        return "https://terapizone.com/_next/static/media/terapizonelogoWhite-svg.a5271de6.svg";
+        return `${terapizoneLogos}/terapizoneWhite.svg`;
       case "calendar":
-        return "https://terapizone.com/_next/static/media/calendarWhite-svg.9fe825d3.svg";
+        return `${terapizoneLogos}/calendarWhite.svg`;
       case "video":
-        return "https://terapizone.com/_next/static/media/videoWhite-svg.6faca592.svg";
+        return `${terapizoneLogos}/videoWhite.svg`;
       default:
         return "";
     }
@@ -61,11 +65,11 @@ const Home = () => {
   const getCurrentIcon = (id) => {
     switch (id) {
       case "match":
-        return "https://terapizone.com/_next/static/media/terapizonelogo-svg.6bd71de1.svg";
+        return `${terapizoneLogos}/terapizone.svg`;
       case "calendar":
-        return "https://terapizone.com/_next/static/media/calendar-svg.7d2c7e63.svg";
+        return `${terapizoneLogos}/calendar.svg`;
       case "video":
-        return "https://terapizone.com/_next/static/media/video-svg.d137c8e2.svg";
+        return `${terapizoneLogos}/video.svg`;
       default:
         return "";
     }
@@ -74,11 +78,11 @@ const Home = () => {
   const getSelectedImage = (id) => {
     switch (id) {
       case "match":
-        return "https://www.terapizone.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fstep1-3x.6a44374d.webp&w=750&q=75";
+        return `${terapizoneImages}/matches-img.png`;
       case "calendar":
-        return "https://www.terapizone.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fstep2-3x.9433a8cd.webp&w=750&q=75";
+        return `${terapizoneImages}/sessions-img.png`;
       case "video":
-        return "https://www.terapizone.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fstep3-3x.edaae250.webp&w=640&q=75";
+        return `${terapizoneImages}/contacts-img.png`;
       default:
         return "";
     }
@@ -138,15 +142,12 @@ const Home = () => {
                 selectUsageBtn(
                   event.target.className,
                   event.target.id,
-                  event.target.childNodes[0].id
+                  event.target.childNodes[0]?.id
                 )
               }
             >
               <div id="match-background" className="match-container">
-                <img
-                  src="https://terapizone.com/_next/static/media/terapizonelogo-svg.6bd71de1.svg"
-                  alt=""
-                />
+                <img src={`${terapizoneLogos}/terapizone.svg`} alt="" />
               </div>
               <div className="match-container-info">
                 <p
@@ -182,15 +183,12 @@ const Home = () => {
                 selectUsageBtn(
                   event.target.className,
                   event.target.id,
-                  event.target.childNodes[0].id
+                  event.target.childNodes[0]?.id
                 )
               }
             >
               <div id="calendar-background" className="match-container">
-                <img
-                  src="https://terapizone.com/_next/static/media/calendar-svg.7d2c7e63.svg"
-                  alt=""
-                />
+                <img src={`${terapizoneLogos}/calendar.svg`} alt="" />
               </div>
               <div className="match-container-info">
                 <p
@@ -224,15 +222,12 @@ const Home = () => {
                 selectUsageBtn(
                   event.target.className,
                   event.target.id,
-                  event.target.childNodes[0].id
+                  event.target.childNodes[0]?.id
                 )
               }
             >
               <div id="video-background" className="match-container">
-                <img
-                  src="https://terapizone.com/_next/static/media/video-svg.d137c8e2.svg"
-                  alt=""
-                />
+                <img src={`${terapizoneLogos}/video.svg`} alt="" />
               </div>
               <div className="match-container-info">
                 <p
@@ -262,7 +257,7 @@ const Home = () => {
           <div className="guide-therapy-image-container">
             <img
               id="guide-theraphy-image"
-              src="https://www.terapizone.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fstep2-3x.9433a8cd.webp&w=750&q=75"
+              src={`${terapizoneImages}/sessions-img.png`}
               alt=""
             />
           </div>
@@ -348,9 +343,10 @@ const Home = () => {
           />
         </div>
       </section>
-      <section id="experts" 
-      style={{paddingTop:"3em"}}>
-        <p className="font-bold text-center mb-3 text-3xl">İhtiyacına En Uygun Uzmanı Seç</p>
+      <section id="experts" style={{ paddingTop: "3em" }}>
+        <p className="font-bold text-center mb-3 text-3xl">
+          İhtiyacına En Uygun Uzmanı Seç
+        </p>
         <ExpertsCarousel />
       </section>
       <section id="frequently-asked-questions">
